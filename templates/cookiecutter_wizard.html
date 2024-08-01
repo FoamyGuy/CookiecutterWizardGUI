@@ -1,0 +1,55 @@
+{% load static %}
+{% load utils %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookiecutter 🧙‍♀️</title>
+    <link rel="stylesheet" href="{% static 'bulma/css/bulma.css' %}">
+    <style>
+        form label, form input, form span {
+            display: block;
+        }
+
+        .field {
+            border-bottom: 1px solid white;
+            padding-bottom: 8px;
+            margin-bottom: 8px !important;
+        }
+
+        input[type=submit] {
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+<body>
+<section class="section">
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {% for config_key, default_val in template_conf_obj.items %}
+                {% if not config_key|first == '_' %}
+                    <div class="field">
+                        <label class="label" for="{{ config_key }}">{{ config_key }}</label>
+                        {% if default_val|is_list %}
+                            <select name="{{ config_key }}">
+                                {% for possible_val in default_val %}
+                                    <option value="{{ possible_val }}">{{ possible_val }}</option>
+                                {% endfor %}
+                            </select>
+                        {% else %}
+                            <div class="control">
+                                <input class="input has-background-dark" type="text" placeholder=""
+                                       name="{{ config_key }}">
+                            </div>
+                        {% endif %}
+                        <p class="help">Default: <em>{{ default_val }}</em></p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <input type="submit" value="Generate Project">
+        </form>
+    </div>
+</section>
+</body>
+</html>

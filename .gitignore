@@ -6,3 +6,14 @@ media/*
 
 media/generated/*
 !media/generated/.gitkeep
+
+.cookiecutter_wizard_venv
+
+cookiecutter_wizard_app/cookie_kitchen/*
+!cookiecutter_wizard_app/cookie_kitchen/.gitkeep
+
+
+*/migrations/*
+!*/migrations/__init__.py
+
+db.sqlite3
