@@ -19,3 +19,5 @@ cookiecutter_wizard_app/cookie_kitchen/*
 db.sqlite3
 
 .env
+
+*.pyc

@@ -134,4 +134,7 @@ if DEBUG:
     ]
 else:
     STATIC_ROOT = '/webapps/cookie_wizard/static/'
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+    ]
     CSRF_TRUSTED_ORIGINS = ["https://cookiecutter.foamyguy.com"]
