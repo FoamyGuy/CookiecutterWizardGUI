@@ -17,3 +17,5 @@ cookiecutter_wizard_app/cookie_kitchen/*
 !*/migrations/__init__.py
 
 db.sqlite3
+
+.env

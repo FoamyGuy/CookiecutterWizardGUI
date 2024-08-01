@@ -133,5 +133,5 @@ if DEBUG:
         os.path.join(BASE_DIR, "static"),
     ]
 else:
-    STATIC_ROOT = '/webapps/cookie_cutter_wizard/static/'
-    CSRF_TRUSTED_ORIGINS = ["https://something.com"]
+    STATIC_ROOT = '/webapps/cookie_wizard/static/'
+    CSRF_TRUSTED_ORIGINS = ["https://cookiecutter.foamyguy.com"]
